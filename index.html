@@ -245,6 +245,134 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="heyMeow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Meow & Code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/21/ES6之字符串的扩展（上）/" itemprop="url">
+                  ES6之字符串的扩展（上）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-21T22:31:03+08:00">
+                2017-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><p>在传统的拼接字符串中，使用的是‘+’进行拼接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = &quot;a的值是&quot; + a + &quot;，b的值是&quot; + b;</div><div class="line">console.log(str);  // a的值是1，b的值是2</div></pre></td></tr></table></figure></p>
+<p>可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接的（键盘上tab键上面的那个键子）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = `a的值是$&#123;a&#125;，b的值是$&#123;b&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
+<p>变量的值放在${ }中，里边除了可以是变量，也可以是表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var res = `the sum of a and b is $&#123;a+b&#125;`;</div><div class="line">console.log(res);  // the sum of a and b is 3</div></pre></td></tr></table></figure></p>
+<p>表达式也包括函数的调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sum (a=1, b=2)&#123;</div><div class="line">  return a+b;</div><div class="line">&#125;</div><div class="line">var str = `the result is $&#123;sum()&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，在模板字符串中所有出现的空格、换行和缩进都会保留在输出中：<br><figure class="highlight plain"><figcaption><span>str = `a的值是$&#123;a&#125;，</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b的值是$&#123;b&#125;`;</div></pre></td></tr></table></figure></p>
+<p>上边输出的str也是含有换行的str。</p>
+<h4 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h4><p>标签模板是在模板字符串前加上一个用来处理它的函数名称，我们先来看下边的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var yy = 2017, mm = 4, dd = 21;</div><div class="line">tagTemplate`Today is $&#123;yy&#125;-$&#123;mm&#125;-$&#123;dd&#125;.`</div><div class="line">function tagTemplate(arr,...values)&#123;</div><div class="line">  console.log(arr);  // [ &apos;Today is &apos;, &apos;-&apos;, &apos;-&apos;, &apos;.&apos; ]</div><div class="line">  console.log(values); // [ 2017, 4, 21 ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>参数里的…values后边会讲到，这里可以把…values和arr理解为arguments。arguments[0]就是arr，是一个数租，里边的元素是模板字符串中的非变量内容。values，存放的是模板字符串中的变量值，这样，我们知道了他们存放的位置就可以随意的处理和操纵模板字符串了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/ES6之解构赋值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -719,7 +847,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

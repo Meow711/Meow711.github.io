@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="嘿喵, heyMeow, 赵舟桥" />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -85,17 +85,17 @@
 
 
 
-<meta name="description" content="“嗯倒霉不分国界不分地域不分性别不分年龄”  我的电脑在被我灌了牛奶后直接挂掉，开始重装系统、装软件、恢复以前的配置…没了固态硬盘，速度慢的一招回到解放前 :( 以前没有好的习惯，写过的代码，博客的配置文件都消亡了，今天又重搭博客，没想到又出了各种各样的问题。  github pages和自己的域名关联1）在自己的域名管理页面添加解析2）在自己的本地仓库中加入CNAME文件，文件内容写上自己的域">
-<meta name="keywords">
+<meta name="description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
+<meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从0开始">
-<meta property="og:url" content="http://yoursite.com/2017/04/18/从0开始/index.html">
+<meta property="og:title" content="ES6之字符串的扩展（上）">
+<meta property="og:url" content="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/index.html">
 <meta property="og:site_name" content="Meow & Code">
-<meta property="og:description" content="“嗯倒霉不分国界不分地域不分性别不分年龄”  我的电脑在被我灌了牛奶后直接挂掉，开始重装系统、装软件、恢复以前的配置…没了固态硬盘，速度慢的一招回到解放前 :( 以前没有好的习惯，写过的代码，博客的配置文件都消亡了，今天又重搭博客，没想到又出了各种各样的问题。  github pages和自己的域名关联1）在自己的域名管理页面添加解析2）在自己的本地仓库中加入CNAME文件，文件内容写上自己的域">
-<meta property="og:updated_time" content="2017-04-18T09:31:12.793Z">
+<meta property="og:description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
+<meta property="og:updated_time" content="2017-04-21T14:31:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从0开始">
-<meta name="twitter:description" content="“嗯倒霉不分国界不分地域不分性别不分年龄”  我的电脑在被我灌了牛奶后直接挂掉，开始重装系统、装软件、恢复以前的配置…没了固态硬盘，速度慢的一招回到解放前 :( 以前没有好的习惯，写过的代码，博客的配置文件都消亡了，今天又重搭博客，没想到又出了各种各样的问题。  github pages和自己的域名关联1）在自己的域名管理页面添加解析2）在自己的本地仓库中加入CNAME文件，文件内容写上自己的域">
+<meta name="twitter:title" content="ES6之字符串的扩展（上）">
+<meta name="twitter:description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/18/从0开始/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/"/>
 
 
 
 
 
-  <title> 从0开始 | Meow & Code </title>
+  <title> ES6之字符串的扩展（上） | Meow & Code </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -248,7 +248,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/从0开始/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="heyMeow">
@@ -269,7 +269,7 @@
             
             
               
-                从0开始
+                ES6之字符串的扩展（上）
               
             
           </h1>
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-18T17:03:56+08:00">
-                2017-04-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-21T22:31:03+08:00">
+                2017-04-21
               </time>
             
 
@@ -320,17 +320,14 @@
       
 
       
-        <blockquote>
-<p>“嗯倒霉不分国界不分地域不分性别不分年龄”</p>
-</blockquote>
-<p>我的电脑在被我灌了牛奶后直接挂掉，开始重装系统、装软件、恢复以前的配置…没了固态硬盘，速度慢的一招回到解放前 :(</p>
-<p>以前没有好的习惯，写过的代码，博客的配置文件都消亡了，今天又重搭博客，没想到又出了各种各样的问题。</p>
-<ul>
-<li><p>github pages和自己的域名关联<br>1）在自己的域名管理页面添加解析<br>2）在自己的本地仓库中加入CNAME文件，文件内容写上自己的域名地址（如我的：javascript404.com），但这个也是最折磨我的问题。每次用hexo部署的时候，偏偏这个CNAME就像隐身了一样就是上传不上去。查了好久，其实都是hexo的问题，它会默认把md等文件转换成html, CNAME也会忽视不见。解决办法就是把READNE.md和CNAME放到source文件夹下就可以啦~</p>
-</li>
-<li><p>之前更换主题总是不出效果<br>1）可能的原因是浏览器的缓存，需要重启浏览器<br>2）也可能是hexo出现了缓存，使用命令 hexo clean后再重新部署</p>
-</li>
-</ul>
+        <h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><p>在传统的拼接字符串中，使用的是‘+’进行拼接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = &quot;a的值是&quot; + a + &quot;，b的值是&quot; + b;</div><div class="line">console.log(str);  // a的值是1，b的值是2</div></pre></td></tr></table></figure></p>
+<p>可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接的（键盘上tab键上面的那个键子）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = `a的值是$&#123;a&#125;，b的值是$&#123;b&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
+<p>变量的值放在${ }中，里边除了可以是变量，也可以是表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var res = `the sum of a and b is $&#123;a+b&#125;`;</div><div class="line">console.log(res);  // the sum of a and b is 3</div></pre></td></tr></table></figure></p>
+<p>表达式也包括函数的调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sum (a=1, b=2)&#123;</div><div class="line">  return a+b;</div><div class="line">&#125;</div><div class="line">var str = `the result is $&#123;sum()&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，在模板字符串中所有出现的空格、换行和缩进都会保留在输出中：<br><figure class="highlight plain"><figcaption><span>str = `a的值是$&#123;a&#125;，</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b的值是$&#123;b&#125;`;</div></pre></td></tr></table></figure></p>
+<p>上边输出的str也是含有换行的str。</p>
+<h4 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h4><p>标签模板是在模板字符串前加上一个用来处理它的函数名称，我们先来看下边的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var yy = 2017, mm = 4, dd = 21;</div><div class="line">tagTemplate`Today is $&#123;yy&#125;-$&#123;mm&#125;-$&#123;dd&#125;.`</div><div class="line">function tagTemplate(arr,...values)&#123;</div><div class="line">  console.log(arr);  // [ &apos;Today is &apos;, &apos;-&apos;, &apos;-&apos;, &apos;.&apos; ]</div><div class="line">  console.log(values); // [ 2017, 4, 21 ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>参数里的…values后边会讲到，这里可以把…values和arr理解为arguments。arguments[0]就是arr，是一个数租，里边的元素是模板字符串中的非变量内容。values，存放的是模板字符串中的变量值，这样，我们知道了他们存放的位置就可以随意的处理和操纵模板字符串了。</p>
 
       
     </div>
@@ -358,6 +355,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
 
       
         
@@ -367,15 +370,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/19/ES6之let和const/" rel="next" title="ES6之let和const">
-                <i class="fa fa-chevron-left"></i> ES6之let和const
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/20/ES6之解构赋值/" rel="prev" title="ES6之解构赋值">
+                ES6之解构赋值 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -422,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -496,6 +508,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板字符串"><span class="nav-number">1.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签模板"><span class="nav-number">2.</span> <span class="nav-text">标签模板</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

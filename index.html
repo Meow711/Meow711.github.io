@@ -245,6 +245,142 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/ES6之字符串的扩展（下）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="heyMeow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Meow & Code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/22/ES6之字符串的扩展（下）/" itemprop="url">
+                  ES6之字符串的扩展（下）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-22T15:33:03+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>上一节中，我们学习了模板字符串和标签模板，这一节，我们接着来看一下ES6还对字符串添加了哪些新特性。</p>
+<blockquote>
+<p>repeat() 函数<br>includes() 函数<br>startswith() 函数<br>endswith() 函数<br>codePointAt() 函数<br>String.fromCodePoint( ) 函数<br>String.raw() 函数</p>
+</blockquote>
+<h4 id="repeat-函数"><a href="#repeat-函数" class="headerlink" title="repeat() 函数"></a>repeat() 函数</h4><p>将目标字符串重复n次，返回新的字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cons tname = &apos;zzq&apos;;</div><div class="line">const nameR = name.repeat(3);</div><div class="line">console.log(nameR);  // zzqzzqzzq</div></pre></td></tr></table></figure></p>
+<h4 id="includes-函数"><a href="#includes-函数" class="headerlink" title="includes() 函数"></a>includes() 函数</h4><p>判断字符串中是否含有指定的字符串，返回值是boolean类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const str = &quot;my name is zzq&quot;;</div><div class="line">str.includes(&apos;zzq&apos;);  // true</div><div class="line">str.includes(&apos;s&apos;);  // false</div></pre></td></tr></table></figure></p>
+<p>includes(参数1, 参数2) 可以传入两个参数：<br>参数1：要查找的字符串，<br>参数2：指定开始查找的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const str = &quot;my name is zzq&quot;;</div><div class="line">str.includes(&apos;m&apos;);   // true</div><div class="line">str.includes(&apos;m&apos;, 8); // false</div></pre></td></tr></table></figure></p>
+<h4 id="startswith-函数"><a href="#startswith-函数" class="headerlink" title="startswith() 函数"></a>startswith() 函数</h4><p>startswith(参数1, 参数2)：<br>判断目标字符串是否以指定字符串开头<br>参数1：指定字符串，<br>参数2（可选）：开始搜索的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">const str = &quot;jintian tianqi zhenhao&quot;;</div><div class="line">str.startsWith(&apos;jin&apos;);  // true</div><div class="line">str.startsWith(&apos;tianqi &apos;);  // false</div><div class="line">str.startsWith(&apos;tianqi &apos;,8);  // true</div></pre></td></tr></table></figure></p>
+<h4 id="endswith-函数"><a href="#endswith-函数" class="headerlink" title="endswith() 函数"></a>endswith() 函数</h4><p>和startswith的用法一样，用来判断目标字符串是否以指定字符串结尾。同样也可以使用两个参数。废话不多说，直接上代码就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">const str = &quot;jintian tianqi zhenhao&quot;;</div><div class="line">str.endsWith(&apos;zhenhao&apos;);  // true</div><div class="line">str.endsWith(&apos;qi&apos;, 14);  // true</div><div class="line">str.endsWith(&apos;an&apos;, 7);  //  true</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，第二个参数是代表指在前n个字符里判断。</p>
+<h4 id="codePointAt-函数"><a href="#codePointAt-函数" class="headerlink" title="codePointAt() 函数"></a>codePointAt() 函数</h4><p>在js中，一个字符需要2个字节存储，需要4个字节存储的js认为它是2个字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const str = &quot;𠮷&quot;;</div><div class="line">console.log(str.length);  // 2</div></pre></td></tr></table></figure></p>
+<p>例如汉字 “𠮷”的长度是2，代表占两个字符，但是js无法处理。。所以ES6添加了codePointAt()函数用来处理4个字节的字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const str = &quot;𠮷&quot;;</div><div class="line">str.codePointAt(str);  // 134071</div></pre></td></tr></table></figure></p>
+<p>134071是 “𠮷”的码点的十进制数，转换成16进制就是20bb7，其对应的Unicode编码则是\u20bb7。<br>（这一块我理解的不是很好，建议可以看下这篇文章细致的了解：<a href="https://segmentfault.com/a/1190000008635675" target="_blank" rel="external">es6学习笔记-字符串的扩展_v1.0</a>）</p>
+<h4 id="String-fromCodePoint-函数"><a href="#String-fromCodePoint-函数" class="headerlink" title="String.fromCodePoint( ) 函数"></a>String.fromCodePoint( ) 函数</h4><p>和codePointAt()相反，该函数是根据传进的码点返回对应的字符，比如上边的 “𠮷” 的码点是134071：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.fromCodePoint(134071); //   𠮷</div></pre></td></tr></table></figure></p>
+<h4 id="String-raw-函数"><a href="#String-raw-函数" class="headerlink" title="String.raw() 函数"></a>String.raw() 函数</h4><p>我们先来看一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">`hello\nworld`;  // 输出：hello换行world</div><div class="line">String.raw`hello\nworld`;  // 输出：hello\nworld</div></pre></td></tr></table></figure></p>
+<p>从上边的代码中，可以很清晰地看到String.raw的作用：把已加工的字符串转换为原始字符串。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -847,7 +983,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

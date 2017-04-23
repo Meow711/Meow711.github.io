@@ -85,17 +85,17 @@
 
 
 
-<meta name="description" content="一、letlet也是定义变量的一种声明方式，但是和var又有不同，主要记住下边4个注意点就行啦！  统一块级作用域，不允许重复声明一个变量 123var a = 1;let a = 2;console.log(a);  //报错  函数内不能用let重新声明函数的参数 12345function foo(a, b)&amp;#123;  let b = 0;  return a+b;&amp;#125;foo(1">
+<meta name="description" content="Number.isNaN我们知道isNaN曾是window下边的属性，用来判断是否是NaN（非数值））类型的。现在添加到Number对象下，也是同样的作用。所以我们需要注意的是它们的不同点：  window.isNaN  可以省略window直接使用isNaN 12window.isNaN(5);  // falseisNaN(5);  // false  先对目标值转化为数值类型再判断 1isN">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之let和const">
-<meta property="og:url" content="http://yoursite.com/2017/04/19/ES6之let和const/index.html">
+<meta property="og:title" content="ES6之数值的扩展（上）">
+<meta property="og:url" content="http://yoursite.com/2017/04/23/ES6之数值的扩展（上）/index.html">
 <meta property="og:site_name" content="Meow & Code">
-<meta property="og:description" content="一、letlet也是定义变量的一种声明方式，但是和var又有不同，主要记住下边4个注意点就行啦！  统一块级作用域，不允许重复声明一个变量 123var a = 1;let a = 2;console.log(a);  //报错  函数内不能用let重新声明函数的参数 12345function foo(a, b)&amp;#123;  let b = 0;  return a+b;&amp;#125;foo(1">
-<meta property="og:updated_time" content="2017-04-19T11:35:35.712Z">
+<meta property="og:description" content="Number.isNaN我们知道isNaN曾是window下边的属性，用来判断是否是NaN（非数值））类型的。现在添加到Number对象下，也是同样的作用。所以我们需要注意的是它们的不同点：  window.isNaN  可以省略window直接使用isNaN 12window.isNaN(5);  // falseisNaN(5);  // false  先对目标值转化为数值类型再判断 1isN">
+<meta property="og:updated_time" content="2017-04-23T08:15:51.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之let和const">
-<meta name="twitter:description" content="一、letlet也是定义变量的一种声明方式，但是和var又有不同，主要记住下边4个注意点就行啦！  统一块级作用域，不允许重复声明一个变量 123var a = 1;let a = 2;console.log(a);  //报错  函数内不能用let重新声明函数的参数 12345function foo(a, b)&amp;#123;  let b = 0;  return a+b;&amp;#125;foo(1">
+<meta name="twitter:title" content="ES6之数值的扩展（上）">
+<meta name="twitter:description" content="Number.isNaN我们知道isNaN曾是window下边的属性，用来判断是否是NaN（非数值））类型的。现在添加到Number对象下，也是同样的作用。所以我们需要注意的是它们的不同点：  window.isNaN  可以省略window直接使用isNaN 12window.isNaN(5);  // falseisNaN(5);  // false  先对目标值转化为数值类型再判断 1isN">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/19/ES6之let和const/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/23/ES6之数值的扩展（上）/"/>
 
 
 
 
 
-  <title> ES6之let和const | Meow & Code </title>
+  <title> ES6之数值的扩展（上） | Meow & Code </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -248,7 +248,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/ES6之let和const/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/23/ES6之数值的扩展（上）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="heyMeow">
@@ -269,7 +269,7 @@
             
             
               
-                ES6之let和const
+                ES6之数值的扩展（上）
               
             
           </h1>
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-19T18:56:06+08:00">
-                2017-04-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-23T16:15:00+08:00">
+                2017-04-23
               </time>
             
 
@@ -320,42 +320,31 @@
       
 
       
-        <h4 id="一、let"><a href="#一、let" class="headerlink" title="一、let"></a>一、let</h4><p>let也是定义变量的一种声明方式，但是和var又有不同，主要记住下边4个注意点就行啦！</p>
+        <h4 id="Number-isNaN"><a href="#Number-isNaN" class="headerlink" title="Number.isNaN"></a>Number.isNaN</h4><p>我们知道isNaN曾是window下边的属性，用来判断是否是NaN（非数值））类型的。现在添加到Number对象下，也是同样的作用。所以我们需要注意的是它们的不同点：</p>
 <ul>
-<li><p>统一块级作用域，不允许重复声明一个变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">let a = 2;</div><div class="line">console.log(a);  //报错</div></pre></td></tr></table></figure>
+<li><p>window.isNaN</p>
+<ul>
+<li><p>可以省略window直接使用isNaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.isNaN(5);  // false</div><div class="line">isNaN(5);  // false</div></pre></td></tr></table></figure>
 </li>
-<li><p>函数内不能用let重新声明函数的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function foo(a, b)&#123;</div><div class="line">  let b = 0;</div><div class="line">  return a+b;</div><div class="line">&#125;</div><div class="line">foo(1,2);  //报错</div></pre></td></tr></table></figure>
-</li>
-<li><p>只在let命令所在代码块内有效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(let i = 0;i&lt; 5;i++)&#123;</div><div class="line">  console.log(i);  //0,1,2,3,4</div><div class="line">&#125;</div><div class="line">console.log(i); // 报错 i is not defined</div></pre></td></tr></table></figure>
-</li>
-<li><p>用let声明变量没有变量提升的作用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">~function()&#123;</div><div class="line">  console.log(a);  // 报错 a is not defined</div><div class="line">  let a = 1;</div><div class="line">&#125;();</div></pre></td></tr></table></figure>
+<li><p>先对目标值转化为数值类型再判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">isNaN(&apos;abc&apos;);  // 不能转换为数值类型，所以是NaN --&gt;&gt; true</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="二、const"><a href="#二、const" class="headerlink" title="二、const"></a>二、const</h4><p>var 和 let 是用来定义变量的，而 const 是用来定义常量的。常量，就是固定不变的量。</p>
+</li>
+<li><p>Number.isNaN</p>
 <ul>
-<li><p>用const定义一次后就不能再定义。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const a = 1;</div><div class="line">const a = 2;  //报错，不能重复定义一个常量</div></pre></td></tr></table></figure>
-</li>
-<li><p>也不能进行修改：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const a = 1;</div><div class="line">a = 3;  //报错</div></pre></td></tr></table></figure>
-</li>
-<li><p>只能在同一块级作用域中起作用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(true)&#123;</div><div class="line">  const a = 1;</div><div class="line">  console.log(a);  // 1</div><div class="line">&#125;</div><div class="line">console.log(a);  // 报错</div></pre></td></tr></table></figure>
-</li>
-<li><p>不能只声明不赋值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const a;  //报错</div></pre></td></tr></table></figure>
-</li>
-<li><p>const也可以声明一个对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const obj = &#123;</div><div class="line">  name: &apos;zzq&apos;,</div><div class="line">  age: 12</div><div class="line">&#125;</div><div class="line">console.log(obj);  // &#123; name: &apos;zzq&apos;, age: 12 &#125;</div></pre></td></tr></table></figure>
+<li>必须使用Number进行调用</li>
+<li>只对数值类型有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Number.isNaN(5);  //  false</div><div class="line">Number.isNaN(&apos;abc5&apos;);  // false</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<p>留一个供大家思考的问题，既然 const 可以定义对象，那么试着修改对象的属性，你发现了什么？</p>
-</blockquote>
+</li>
+</ul>
+<h4 id="Number-isFinite"><a href="#Number-isFinite" class="headerlink" title="Number.isFinite"></a>Number.isFinite</h4><p>判断是否是非无穷，同样只对数值类型有效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Number.isFinite(5);  // true</div><div class="line">Number.isFinite(&apos;abc&apos;);  // false</div></pre></td></tr></table></figure></p>
+<h4 id="Number-parseInt-amp-Number-ParseFloat"><a href="#Number-parseInt-amp-Number-ParseFloat" class="headerlink" title="Number.parseInt &amp; Number.ParseFloat"></a>Number.parseInt &amp; Number.ParseFloat</h4><p>ES6 把全局下的parseInt 和ParseFloat也转移到了Number下边了，用法没有区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Number.parseFloat(&apos;ss2.15&apos;);  // NaN</div><div class="line">Number.parseFloat(&apos;2.15ss&apos;);  // 2.15</div><div class="line">Number.parseInt(&apos;2.15ss&apos;);  // 2</div></pre></td></tr></table></figure></p>
+<h4 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger"></a>Number.isInteger</h4><p>判断是否是整数，看几个例子就够了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Number.isInteger(2);  // true</div><div class="line">Number.isInteger(2.5);  // false</div><div class="line">*特殊注意* Number.isInteger(3.0);  // true</div><div class="line">Number.isInteger(&apos;abc&apos;);  // false</div><div class="line">Number.isInteger(&apos;2a&apos;);  // false</div></pre></td></tr></table></figure></p>
+<h4 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h4><p>Number.EPSILON代表了一个极小的常量，通常用来判断浮点数的计算误差。那么这个极小常量有多小呢？<code>console.log(Number.EPSILON);  // 2.220446049250313e-16</code>通过控制台输出我们看到Number.EPSILON的值。<br>我们知道浮点数在计算的时候回产生误差，所以在计算时通过判断差值是否小于这个Number.EPSILON极小常量来判断是否计算准确。</p>
+<h4 id="安全整数"><a href="#安全整数" class="headerlink" title="安全整数"></a>安全整数</h4><p>ES6中引入了安全整数的概念，什么是安全整数？javascript能够处理的数据的范围是在-2^53到2^53之间，在这个范围内的数值就被称为是安全整数，超出了这个范围就被称为不安全。<br>ES6把这个范围的下限-2^53 定义为Number.MIN_SAFE_INTEGER，上线2^53定义为Number.MAX_SAFE_INTEGER，那么我们这么判断是否在这个范围内呢，直接用Number.isSafeInteger就可以判断是否在这个安全范围内了。</p>
 
       
     </div>
@@ -398,18 +387,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/20/ES6之解构赋值/" rel="next" title="ES6之解构赋值">
-                <i class="fa fa-chevron-left"></i> ES6之解构赋值
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/18/从0开始/" rel="prev" title="从0开始">
-                从0开始 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/22/ES6之字符串的扩展（下）/" rel="prev" title="ES6之字符串的扩展（下）">
+                ES6之字符串的扩展（下） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、let"><span class="nav-number">1.</span> <span class="nav-text">一、let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、const"><span class="nav-number">2.</span> <span class="nav-text">二、const</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-isNaN"><span class="nav-number">1.</span> <span class="nav-text">Number.isNaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-isFinite"><span class="nav-number">2.</span> <span class="nav-text">Number.isFinite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-parseInt-amp-Number-ParseFloat"><span class="nav-number">3.</span> <span class="nav-text">Number.parseInt & Number.ParseFloat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-isInteger"><span class="nav-number">4.</span> <span class="nav-text">Number.isInteger</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">5.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全整数"><span class="nav-number">6.</span> <span class="nav-text">安全整数</span></a></li></ol></div>
             
 
           </div>

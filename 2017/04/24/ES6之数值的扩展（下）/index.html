@@ -85,17 +85,17 @@
 
 
 
-<meta name="description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
+<meta name="description" content="关于JS内置的Math对象的方法扩展在ES6中新出了很多数学计算，本文只讲几个可能会常用到的，其他关于数学计算的函数可以在使用的时候查文档。  Math.trunc去除一个数的小数部分，返回该数的整数部分。12345678Math.trunc(5);       // 5Math.trunc(5.15));   // 5Math.trunc(&amp;apos;5f&amp;apos;);    // NaN`">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之字符串的扩展（上）">
-<meta property="og:url" content="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/index.html">
+<meta property="og:title" content="ES6之数值的扩展（下）">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/ES6之数值的扩展（下）/index.html">
 <meta property="og:site_name" content="Meow & Code">
-<meta property="og:description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
-<meta property="og:updated_time" content="2017-04-21T14:31:39.000Z">
+<meta property="og:description" content="关于JS内置的Math对象的方法扩展在ES6中新出了很多数学计算，本文只讲几个可能会常用到的，其他关于数学计算的函数可以在使用的时候查文档。  Math.trunc去除一个数的小数部分，返回该数的整数部分。12345678Math.trunc(5);       // 5Math.trunc(5.15));   // 5Math.trunc(&amp;apos;5f&amp;apos;);    // NaN`">
+<meta property="og:updated_time" content="2017-04-24T05:25:02.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之字符串的扩展（上）">
-<meta name="twitter:description" content="模板字符串在传统的拼接字符串中，使用的是‘+’进行拼接：123var a =1, b=2;var str = &amp;quot;a的值是&amp;quot; + a + &amp;quot;，b的值是&amp;quot; + b;console.log(str);  // a的值是1，b的值是2 可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接">
+<meta name="twitter:title" content="ES6之数值的扩展（下）">
+<meta name="twitter:description" content="关于JS内置的Math对象的方法扩展在ES6中新出了很多数学计算，本文只讲几个可能会常用到的，其他关于数学计算的函数可以在使用的时候查文档。  Math.trunc去除一个数的小数部分，返回该数的整数部分。12345678Math.trunc(5);       // 5Math.trunc(5.15));   // 5Math.trunc(&amp;apos;5f&amp;apos;);    // NaN`">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/ES6之数值的扩展（下）/"/>
 
 
 
 
 
-  <title> ES6之字符串的扩展（上） | Meow & Code </title>
+  <title> ES6之数值的扩展（下） | Meow & Code </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -248,7 +248,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/ES6之字符串的扩展（上）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/ES6之数值的扩展（下）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="heyMeow">
@@ -269,7 +269,7 @@
             
             
               
-                ES6之字符串的扩展（上）
+                ES6之数值的扩展（下）
               
             
           </h1>
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-21T22:31:03+08:00">
-                2017-04-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-24T13:24:08+08:00">
+                2017-04-24
               </time>
             
 
@@ -320,14 +320,12 @@
       
 
       
-        <h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><p>在传统的拼接字符串中，使用的是‘+’进行拼接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = &quot;a的值是&quot; + a + &quot;，b的值是&quot; + b;</div><div class="line">console.log(str);  // a的值是1，b的值是2</div></pre></td></tr></table></figure></p>
-<p>可以看出用+进行拼接字符串比较繁琐，尤其是当字符串特别长的时候+就会显得冗余。于是在ES6中就有了模板字符串，它是用反引号`进行拼接的（键盘上tab键上面的那个键子）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a =1, b=2;</div><div class="line">var str = `a的值是$&#123;a&#125;，b的值是$&#123;b&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
-<p>变量的值放在${ }中，里边除了可以是变量，也可以是表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var res = `the sum of a and b is $&#123;a+b&#125;`;</div><div class="line">console.log(res);  // the sum of a and b is 3</div></pre></td></tr></table></figure></p>
-<p>表达式也包括函数的调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sum (a=1, b=2)&#123;</div><div class="line">  return a+b;</div><div class="line">&#125;</div><div class="line">var str = `the result is $&#123;sum()&#125;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure></p>
-<p>需要注意的是，在模板字符串中所有出现的空格、换行和缩进都会保留在输出中：<br><figure class="highlight plain"><figcaption><span>str = `a的值是$&#123;a&#125;，</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b的值是$&#123;b&#125;`;</div></pre></td></tr></table></figure></p>
-<p>上边输出的str也是含有换行的str。</p>
-<h4 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h4><p>标签模板是在模板字符串前加上一个用来处理它的函数名称，我们先来看下边的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var yy = 2017, mm = 4, dd = 21;</div><div class="line">tagTemplate`Today is $&#123;yy&#125;-$&#123;mm&#125;-$&#123;dd&#125;.`</div><div class="line">function tagTemplate(arr,...values)&#123;</div><div class="line">  console.log(arr);  // [ &apos;Today is &apos;, &apos;-&apos;, &apos;-&apos;, &apos;.&apos; ]</div><div class="line">  console.log(values); // [ 2017, 4, 21 ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>参数里的…values后边会讲到，这里可以把…values和arr理解为arguments。arguments[0]就是arr，是一个数租，里边的元素是模板字符串中的非变量内容。values，存放的是模板字符串中的变量值，这样，我们知道了他们存放的位置就可以随意的处理和操纵模板字符串了。</p>
+        <blockquote>
+<p>关于JS内置的Math对象的方法扩展在ES6中新出了很多数学计算，本文只讲几个可能会常用到的，其他关于数学计算的函数可以在使用的时候查文档。</p>
+</blockquote>
+<h4 id="Math-trunc"><a href="#Math-trunc" class="headerlink" title="Math.trunc"></a>Math.trunc</h4><p>去除一个数的小数部分，返回该数的整数部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Math.trunc(5);       // 5</div><div class="line">Math.trunc(5.15));   // 5</div><div class="line">Math.trunc(&apos;5f&apos;);    // NaN</div><div class="line">```    </div><div class="line">  </div><div class="line">#### Math.sign</div><div class="line">判断一个数是正数，负数还是0。</div><div class="line">如果是正数则返回1，如果是负数则返回-1，如果是0则返回0.</div></pre></td></tr></table></figure></p>
+<p>Math.sign(5);   //  1<br>Math.sign(-5);  //  -1<br>Math.sign(0);   //  0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### Math.cbrt</div><div class="line">求一个数的立方根。</div></pre></td></tr></table></figure></p>
+<p>Math.cbrt(8);  // 2<br>Math.cbrt(1);  // 1<br>Math.cbrt(-27);  // -3<br>```</p>
 
       
     </div>
@@ -370,18 +368,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/22/ES6之字符串的扩展（下）/" rel="next" title="ES6之字符串的扩展（下）">
-                <i class="fa fa-chevron-left"></i> ES6之字符串的扩展（下）
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/20/ES6之解构赋值/" rel="prev" title="ES6之解构赋值">
-                ES6之解构赋值 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/23/ES6之数值的扩展（上）/" rel="prev" title="ES6之数值的扩展（上）">
+                ES6之数值的扩展（上） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -522,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板字符串"><span class="nav-number">1.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签模板"><span class="nav-number">2.</span> <span class="nav-text">标签模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-trunc"><span class="nav-number">1.</span> <span class="nav-text">Math.trunc</span></a></li></ol></div>
             
 
           </div>

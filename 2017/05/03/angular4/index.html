@@ -85,17 +85,17 @@
 
 
 
-<meta name="description" content="AngularJs-1.6版本网络请求">
+<meta name="description" content="AngularJs-1.6版本网络请求其实和1.5版本没什么区别,就是成功的回调函数和失败的回调函数语法不同了! 示例代码 :12345678910111213141516&amp;lt;body ng-app=&amp;quot;app&amp;quot; ng-controller=&amp;quot;appController&amp;quot;&amp;gt;&amp;lt;script src=&amp;quot;../js/angular.js&amp;q">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular指令作用域及广播">
 <meta property="og:url" content="http://yoursite.com/2017/05/03/angular4/index.html">
 <meta property="og:site_name" content="Meow & Code">
-<meta property="og:description" content="AngularJs-1.6版本网络请求">
-<meta property="og:updated_time" content="2017-05-23T08:23:02.490Z">
+<meta property="og:description" content="AngularJs-1.6版本网络请求其实和1.5版本没什么区别,就是成功的回调函数和失败的回调函数语法不同了! 示例代码 :12345678910111213141516&amp;lt;body ng-app=&amp;quot;app&amp;quot; ng-controller=&amp;quot;appController&amp;quot;&amp;gt;&amp;lt;script src=&amp;quot;../js/angular.js&amp;q">
+<meta property="og:updated_time" content="2017-05-23T08:25:20.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular指令作用域及广播">
-<meta name="twitter:description" content="AngularJs-1.6版本网络请求">
+<meta name="twitter:description" content="AngularJs-1.6版本网络请求其实和1.5版本没什么区别,就是成功的回调函数和失败的回调函数语法不同了! 示例代码 :12345678910111213141516&amp;lt;body ng-app=&amp;quot;app&amp;quot; ng-controller=&amp;quot;appController&amp;quot;&amp;gt;&amp;lt;script src=&amp;quot;../js/angular.js&amp;q">
 
 
 
@@ -320,7 +320,9 @@
       
 
       
-        <h4 id="AngularJs-1-6版本网络请求"><a href="#AngularJs-1-6版本网络请求" class="headerlink" title="AngularJs-1.6版本网络请求"></a>AngularJs-1.6版本网络请求</h4>
+        <h4 id="AngularJs-1-6版本网络请求"><a href="#AngularJs-1-6版本网络请求" class="headerlink" title="AngularJs-1.6版本网络请求"></a>AngularJs-1.6版本网络请求</h4><p>其实和1.5版本没什么区别,就是成功的回调函数和失败的回调函数语法不同了!</p>
+<p>示例代码 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;app&quot; ng-controller=&quot;appController&quot;&gt;</div><div class="line">&lt;script src=&quot;../js/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    app.controller(&apos;appController&apos;,[&apos;$scope&apos;,&apos;$http&apos;,function ($scope,$http) &#123;</div><div class="line">        $http(&#123;</div><div class="line">            url:&apos;01-get.php&apos;,</div><div class="line">            method:&apos;get&apos;,</div><div class="line">        // 之前是用success和error回调 现在用then和catch 就这点区别</div><div class="line">        &#125;).then(function (res) &#123;</div><div class="line">            console.log(res.data);</div><div class="line">        &#125;).catch(function (error) &#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;);</div><div class="line">    &#125;]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
